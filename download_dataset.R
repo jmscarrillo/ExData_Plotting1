@@ -7,6 +7,8 @@
 ## Step 1.- Check if the downloaded data already exists.
 ##########
 
+# Author <- "José Mª Sebastián Carrillo"
+
 currentFolder <- getwd()
 dataFileZip <- "household_power_consumption.zip"
 
