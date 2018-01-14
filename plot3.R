@@ -40,7 +40,6 @@ targetData <- subset(data, Date >= "2007-02-01" & Date <= "2007-02-02")
 ## Step 3.- Generate the plot.
 ##########
 
-
 ## Plot the energy sub metering for those 2 days ...
 with(targetData, {
     plot(CompleteTimestamp, Sub_metering_1,
