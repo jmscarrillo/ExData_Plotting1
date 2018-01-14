@@ -20,6 +20,10 @@ data <- read.table(dataFile, header=TRUE, sep=";", dec=".",
                    stringsAsFactors=FALSE, na.strings="?",
                    colClasses = dataFile_colClasses)
 
+## Create a new column with the date and time merged.
+CompleteTimestamp <- strptime(paste(data$Date, data$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
+data <- cbind(data, CompleteTimestamp)
+
 ## Change the date column to the correct class
 data$Date <- as.Date(data$Date, format="%d/%m/%Y")
 
@@ -41,4 +45,6 @@ hist(targetData$Global_active_power, col="red", border="black", main ="Global Ac
 
 # Copy the result to file (png format, dimensions as in webpage)
 dev.copy(png, filename="plot1.png", width=504, height=504)
+
+# Close the device
 dev.off ()
