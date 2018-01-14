@@ -41,7 +41,8 @@ targetData <- subset(data, Date >= "2007-02-01" & Date <= "2007-02-02")
 ##########
 
 ## Plot the global active power for those 2 days
-with(targetData, plot(CompleteTimestamp, Global_active_power, type="l", xlab="Day", ylab="Global Active Power (kilowatts)"))
+with(targetData, plot(CompleteTimestamp, Global_active_power, type="l",
+                      xlab="Day", ylab="Global Active Power (kilowatts)"))
 
 # Copy the result to file (png format, dimensions as in webpage)
 dev.copy(png, filename="plot2.png", width=504, height=504)

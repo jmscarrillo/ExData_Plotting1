@@ -41,7 +41,9 @@ targetData <- subset(data, Date == "2007-02-01" | Date =="2007-02-02")
 ##########
 
 ## Plot histogram of global active power for those 2 days
-hist(targetData$Global_active_power, col="red", border="black", main ="Global Active Power", xlab="Global Active Power (kilowatts)", ylab="Frequency")
+hist(targetData$Global_active_power, col="red", border="black",
+     main ="Global Active Power",
+     xlab="Global Active Power (kilowatts)", ylab="Frequency")
 
 # Copy the result to file (png format, dimensions as in webpage)
 dev.copy(png, filename="plot1.png", width=504, height=504)
